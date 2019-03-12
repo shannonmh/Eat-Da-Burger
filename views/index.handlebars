@@ -2,13 +2,13 @@
 	
 	<div class="row">
 	    <div class="center col-sm-12">
-			<img src="/assets/img/Bobs_burger.jpg" alt="Eat-Da-Burger">
-	        <h1>Eat-Da-Burger</h1>
+			<img src="assets/img/Bobs_burger.jpg" alt="Eat-Da-Burger">
+	        <h1>Eat-Da-Burger App</h1>
 	        <p></p>
 	    </div>
   	</div>
 
-	<div class="row">
+	<div class="row center">
 	    <div class="col-sm-6">
 
 			<br>
@@ -20,9 +20,10 @@
 			      <li>
 			        {{this.burger_name}}
 
-			        <form action="/api/burgers" method="POST">
+			        
+							<form action="/api/burgers" method="POST">
 			          <input type="hidden" name="devoured" value="true">
-			          <button class="btn-primary" type="submit">Devour It!</button>
+			          <button class="btn-danger" type="submit">Devour It!</button>
 			        </form>
 
 			      </li>
@@ -40,6 +41,7 @@
 			    {{#if this.devoured}}
 			      <li>
 			        {{this.burger_name}}
+
 			      </li>
 			    {{/if}}
 			  {{/each}}
@@ -51,17 +53,16 @@
 	<div class="row">
 	    <div class="center col-sm-12">
 
-			<h2>Add A Burger of the Day!</h2>
+			<h2>Add A Burger!</h2>
 
-			<form class="create-update-form">
-            <form class="create-update-form" action="/" method="POST">
+			<form class="create-update-form" action="/" method="POST">
 
 			  <div class="form-group">
 			    <p>Enter a Burger of the Day you want to order and submit to add!</p>
 			    <input type="text" id="ca" name="burger_name">
 			  </div>
 			  
-			  <button class="btn-primary" type="submit">Submit</button>
+			  <button class="btn-danger" type="submit">Submit Order</button>
 			</form>
 
 	    </div>

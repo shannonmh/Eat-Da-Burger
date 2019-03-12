@@ -1,11 +1,10 @@
 var express = require("express");
-
 var router = express.Router();
 
 var burger = require("../models/burger.js");
 
 router.get("/", function(req, res) {
-  burger.selectAll(function(data) {
+  burger.all(function(data) {
     var hbsObject = {
       burgers: data
     };
@@ -14,8 +13,8 @@ router.get("/", function(req, res) {
   });
 });
 
-router.post("/api/burgers", function(req, res) {
-  burger.insertOne([
+router.post("/", function(req, res) {
+  burger.create([
     "burger_name", "devoured"
   ], [
     req.body.burger_name, req.body.devoured
@@ -31,14 +30,15 @@ router.put("/api/burgers/:id", function(req, res) {
 
   console.log("condition", condition);
 
-  burger.updateOne({
+  burger.update({
     devoured: req.body.devoured
-  }, condition, function(result) {
+  }, condition, function() {
     if (result.changedRows == 0) {
-      return res.status(404).end();
+        return res.status(404).end();
     } else {
-      res.status(200).end();
+        res.status(200).end();
     }
+    res.redirect("/");
   });
 });
 

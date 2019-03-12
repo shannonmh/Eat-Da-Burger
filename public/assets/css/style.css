@@ -1,12 +1,27 @@
 @font-face {
-    font-family: "BobsBurgers Roman";
-    src: url(assets/bobs_burger/bobs_burgers.ttf)
+    font-family: "BobsBurgers";
+    src: url(/assets/bobs_burgers/bobs_burgers.ttf)
 }
 
 h1 {
-    font-family: "BobsBurgers Roman" !important;
+    font-family: "BobsBurgers" !important;
+    font-size: 100px !important;
+    text-align: center !important;
 }
 
 body {
     background-color: yellow;
 }
+
+.center {
+	text-align: center;
+}
+
+.create-update-form {
+    padding: 25px;
+    margin: 25px;
+  }
+  
+  .form-group {
+    margin-bottom: 25px;
+  }
