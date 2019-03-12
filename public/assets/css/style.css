@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "BobsBurgers Roman";
+    src: url(assets/bobs_burger/bobs_burgers.ttf)
+}
+
+h1 {
+    font-family: "BobsBurgers Roman" !important;
+}
+
+body {
+    background-color: yellow;
+}

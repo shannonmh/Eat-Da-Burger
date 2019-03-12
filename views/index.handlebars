@@ -1,0 +1,71 @@
+<div class="container bg">
+	
+	<div class="row">
+	    <div class="center col-sm-12">
+			<img src="/assets/img/Bobs_burger.jpg" alt="Eat-Da-Burger">
+	        <h1>Eat-Da-Burger</h1>
+	        <p></p>
+	    </div>
+  	</div>
+
+	<div class="row">
+	    <div class="col-sm-6">
+
+			<br>
+			<h2>Eat These Burgers!</h2>
+
+			<ul>
+			  {{#each burgers}}
+			    {{#unless this.devoured}}
+			      <li>
+			        {{this.burger_name}}
+
+			        <form action="/api/burgers" method="POST">
+			          <input type="hidden" name="devoured" value="true">
+			          <button class="btn-primary" type="submit">Devour It!</button>
+			        </form>
+
+			      </li>
+			    {{/unless}}
+			  {{/each}}
+			</ul>
+
+	    </div>
+
+	    <div class="col-sm-6">
+
+			<h2>Devoured Burgers!</h2>
+			
+			  {{#each burgers}}
+			    {{#if this.devoured}}
+			      <li>
+			        {{this.burger_name}}
+			      </li>
+			    {{/if}}
+			  {{/each}}
+			
+	    </div>
+
+  	</div>
+
+	<div class="row">
+	    <div class="center col-sm-12">
+
+			<h2>Add A Burger of the Day!</h2>
+
+			<form class="create-update-form">
+            <form class="create-update-form" action="/" method="POST">
+
+			  <div class="form-group">
+			    <p>Enter a Burger of the Day you want to order and submit to add!</p>
+			    <input type="text" id="ca" name="burger_name">
+			  </div>
+			  
+			  <button class="btn-primary" type="submit">Submit</button>
+			</form>
+
+	    </div>
+	
+  	</div>
+
+</div>
