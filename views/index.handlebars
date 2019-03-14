@@ -17,16 +17,7 @@
 			<ul>
 			  {{#each burgers}}
 			    {{#unless this.devoured}}
-			      <li>
-			        {{this.burger_name}}
-
-			        
-							<form action="/api/burgers" method="POST">
-			          <input type="hidden" name="devoured" value="true">
-			          <button class="btn-danger" type="submit">Devour It!</button>
-			        </form>
-
-			      </li>
+					{{> burgers/burger-devoured devoured=true}}
 			    {{/unless}}
 			  {{/each}}
 			</ul>
